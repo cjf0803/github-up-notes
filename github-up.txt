@@ -18,18 +18,15 @@
 	ps:1.建议给github上传 新建一个文件夹（方便以后代码上传）
 	     2.在 github 上只能删除仓库，却无法删除文件夹或文件，所以只能通过 git 的基本命令来解决。
 -----------------------------------------------------------
-	1.初始化仓库(在新建的github 上传文件下 右键打开gitbash )
-	     git init	
-
-	2.首先进入你的 master/main 文件夹下。
-	     git pull origin master/main
+	1.git clone 将本地库的ssh地址复制下来
+	
+	2.将需要上传的文件放入 暂存文件夹中 并cd 进入
+			
 	3.开始添加文件
 		1.git add 文件名（将“指定”内容从工作目录添加到暂存区）
 		2.git add . (将文件夹下“所有”内容从工作目录添加到暂存区)
 	4.开始提交(将暂存区文件提交到.git目录下)
 		git commit -m "xxxx(描述)"
-	5.通过库的ssh地址进行远程连接（可以放在最开始敲这个命令：先连接库）
-		git remote add origin （将本地库的ssh地址复制下来）
 
 	6.提交到库中（将git目录下文件提交到远程仓库中）
 		git push -u origin master/main
@@ -38,9 +35,8 @@
 				然后再执行git push -u origin master/main 即可上传成功
 
 5.删除 库中的某个文件
-	1.同样 先进入到你的 master/main 文件夹下。
-		git pull origin master/main
-	2.
+	
+	1.
 	step1: git rm 文件 //本地中该文件会被删除
 	step2: git rm -r 文件夹 //删除文件夹
 	step3: git commit -m '删除某个文件'
