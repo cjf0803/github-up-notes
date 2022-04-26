@@ -27,12 +27,13 @@
 		2.git add . (将文件夹下“所有”内容从工作目录添加到暂存区)
 	4.开始提交(将暂存区文件提交到.git目录下)
 		git commit -m "xxxx(描述)"
-
+		
 	6.提交到库中（将git目录下文件提交到远程仓库中）
 		git push -u origin master/main
-		**ps:此时可能会出现问题 当库中有readme.md文件时需要先把库中文件下载下来再提交
+		**ps:此时可能会出现问题 当库中有readme.md文件时需要先把库中文件下载下来再提交（主要是远程库和本地库文件对应不上）
 			命令为：git pull --rebase origin main
 				然后再执行git push -u origin master/main 即可上传成功
+				或者执行git push origin main -f （强制上传 把远程库覆盖）
 
 5.删除 库中的某个文件
 	
