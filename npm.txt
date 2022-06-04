@@ -1,0 +1,56 @@
+## 2.4.1 删除全部node modules文件的两种方式
+
+###### 2.4.1.1 直接删除项目下的node_modules文件夹
+
+缺点： 当项目依赖包过多时，删除速度非常慢。
+
+###### 2.4.1.2 通过全局安装`rimraf`包删除【这个工具最好全局安装】。
+
+```shell
+# 全局安装命令
+npm install -g rimraf
+```
+
+安装成功之后，进入到项目的node_modules目录下，打开命令行：
+
+*# 执行删除依赖包的命令，这个命令超级好用，依赖基本就是秒删* 
+
+rimraf node_modules
+
+
+
+2.4.2 清除npm缓存caches文件的两种方式
+2.4.1.1 直接删除缓存文件，删除C:\Users\用户名.npmrc 这个文件。
+2.4.1.2 通过命令进行清理
+#### 清理npm缓存的命令（从github上下载下来项目一般都需要先清除缓存）
+npm cache clean --force
+
+以上步骤完成之后，再次进入到项目的根目录，打开命令行，执行npm install即可。
+
+
+
+# npm install安装慢的解决方法
+
+##### 原因:npm使用的是国外镜像;
+
+解决方法:国外镜像修改为别的镜像
+
+1.可用 get命令查看registry
+
+ npm config get registry
+
+原版结果为:
+
+http://registry.npmjs.org
+
+2.用set命令换成阿里的镜像就可以了:
+
+ npm config set registry https://registry.npm.taobao.org
+
+3.再执行命令
+
+        npm install
+
+或者直接执行
+
+npm install --registry=https://registry.npm.taobao.org
